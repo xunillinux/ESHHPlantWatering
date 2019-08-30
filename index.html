@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flask mit nginx</title>
+ </head>
+ <body>
+  <h1>flask mit nginx</h1>
+  <p><input type="button" id="toggle" value="Umschalten" style="background-color: darkgray"></p>
+
+  <script>
+   class Toggle
+   {
+      state = "off" ;
+
+      constructor()
+      {
+         document.querySelector("#toggle").addEventListener( "click", () => this.toggle() ) ;
+      }
+
+      execute( state, color )
+      {
+         fetch( `/app/led/${state}` )
+            .then( response => {
+                   this.state = state ;
+                   document.querySelector("#toggle").style.backgroundColor = color ;
+             } )
+            .catch( error => alert("Sorry, we have a problem" ) ) ;
+      }
+
+      toggle()
+      {
+         if( this.state === "off" )
+         {
+            this.execute( "on", "green" ) ;
+         } 
+         else
+         {
+            this.execute( "off", "darkgray" ) ;
+         } 
+     }
+   }
+
+   let toggle = new Toggle() ;
+  </script>
+ </body>
+</html>
