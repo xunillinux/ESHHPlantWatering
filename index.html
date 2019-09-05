@@ -21,7 +21,13 @@
 
       execute( state, color )
       {
-         fetch( `/app/led/${state}` )
+         let args = {
+                      method: "POST",
+                      body:   `state=${state}`,
+                      headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' }
+                    } ;
+
+         fetch( "/app/led", args  )
             .then( response => {
                    this.state = state ;
                    document.querySelector("#toggle").style.backgroundColor = color ;
