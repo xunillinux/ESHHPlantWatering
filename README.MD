@@ -9,7 +9,7 @@ Flask App and Webinterface for a plant watering system with a Raspberry Pi 3
 1. Install Raspbian Buster with desktop and recommended software
 https://www.raspberrypi.org/downloads/raspbian/
 
-2. Clone this repository to Raspberry Pi to /home/pi/flask
+2. Clone this repository to Raspberry Pi to /home/pi/flask (content of repo should be in folder "flask")
 
 3. sudo apt-get update && sudo apt-get install nginx
 
