@@ -1,0 +1,7 @@
+
+CREATE TABLE IF NOT EXISTS pumpsettings(
+	id INT NOT NULL AUTO_INCREMENT,
+	water_amount INT NOT NULL,
+	PRIMARY KEY ( id )
+);
+

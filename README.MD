@@ -46,7 +46,7 @@ location /app/ {
 
 16. sudo cp /home/pi/flask/www/* /var/www/html
 
-### MySQL Database
+### MariaDB
 
 (GUIDE: https://pimylifeup.com/raspberry-pi-mysql/)
 
@@ -58,6 +58,14 @@ location /app/ {
 
 20. (in mariadb cli) source /home/pi/flask/sql/init.sql
 
+21. (in mariadb cli) source /home/pi/flask/sql/createtables.sql
 
+22. exit
+
+23. pip install mysql-connector-python-rf
+
+24. python /home/pi/flask/sql/dbtest.py
+
+if correctly setup it should print Id: 1, Water Amount: 42
 
 
