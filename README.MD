@@ -6,8 +6,12 @@ Flask App and Webinterface for a plant watering system with a Raspberry Pi 3
 
 ## Setup and Installation:
 
+### Raspberry Pi
+
 1. Install Raspbian Buster with desktop and recommended software
 https://www.raspberrypi.org/downloads/raspbian/
+
+### Nginx and Flask
 
 2. Clone this repository to Raspberry Pi to /home/pi/flask (content of repo should be in folder "flask")
 
@@ -41,6 +45,19 @@ location /app/ {
 15. sudo reboot
 
 16. sudo cp /home/pi/flask/www/* /var/www/html
+
+### MySQL Database
+
+(GUIDE: https://pimylifeup.com/raspberry-pi-mysql/)
+
+17. sudo apt-get install mariadb-server
+
+18. sudo mysql_secure_installation
+
+19. sudo mysql -u root -p
+
+20. (in mariadb cli) source /home/pi/flask/sql/init.sql
+
 
 
 
