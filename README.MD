@@ -13,7 +13,10 @@ https://www.raspberrypi.org/downloads/raspbian/
 
 ### Nginx and Flask
 
-2. Clone this repository to Raspberry Pi to /home/pi/flask (content of repo should be in folder "flask")
+2. Clone this repository to Raspberry Pi to /home/pi/
+
+2.5 Rename repo folder from "ESHHPlantWatering" to "flask"
+(this is because I couldn't be bothered to change all the config file paths for wsgi nginx and so on)
 
 3. sudo apt-get update && sudo apt-get install nginx
 
