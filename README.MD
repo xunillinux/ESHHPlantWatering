@@ -41,7 +41,7 @@ https://www.raspberrypi.org/downloads/raspbian/
 
 location /app/ {
 	include uwsgi_params;
-	uswgi_pass unix:/home/pi/flask/app.sock;
+	uwsgi_pass unix:/home/pi/flask/app.sock;
 }
 
 
@@ -60,6 +60,8 @@ location /app/ {
 19. sudo mysql -u root -p
 
 20. (in mariadb cli) source /home/pi/flask/sql/init.sql
+
+20.5 use plantwateringdb;
 
 21. (in mariadb cli) source /home/pi/flask/sql/createtables.sql
 
