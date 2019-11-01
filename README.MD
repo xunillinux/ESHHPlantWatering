@@ -61,16 +61,36 @@ location /app/ {
 
 20. (in mariadb cli) source /home/pi/flask/sql/init.sql
 
-20.5 use plantwateringdb;
+21 use plantwateringdb;
 
-21. (in mariadb cli) source /home/pi/flask/sql/createtables.sql
+22. (in mariadb cli) source /home/pi/flask/sql/createtables.sql
 
-22. exit
+23. exit
 
-23. pip install mysql-connector-python-rf
+24. pip install mysql-connector-python-rf
 
-24. python /home/pi/flask/sql/dbtest.py
+25. python /home/pi/flask/sql/dbtest.py
 
 if correctly setup it should print Id: 1, Water Amount: 42
+
+### SpyDev Installation
+
+26. cd
+
+27. wget https://github.com/doceme/py-spidev/archive/master.zip 
+
+28. unzip master.zip
+
+29. cd py-spidev-master
+
+30. sudo python setup.py install
+
+### Configure SPI
+
+31. sudo raspi-config
+
+32. interfaces -> SPI -> activate
+
+33. sudo reboot
 
 
