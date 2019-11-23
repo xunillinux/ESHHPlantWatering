@@ -52,4 +52,4 @@ GPIO.setup(MISO, GPIO.IN)
 GPIO.setup(CS, GPIO.OUT)
 
 while True:
-    print readAnalogData(ADC_Channel, SCLK, MOSI, MISO, CS)
+    print (readAnalogData(ADC_Channel, SCLK, MOSI, MISO, CS))
