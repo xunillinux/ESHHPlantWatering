@@ -2,14 +2,11 @@
 from flask import Flask, request
 from RPi import GPIO
 
-# Create a flask app
 app = Flask( __name__ )
 
-# Define the pins
 LED    = 18
 BUTTON = 23
 
-# Setup the GPIOs
 GPIO.setmode( GPIO.BCM )
 GPIO.setup( LED, GPIO.OUT )
 GPIO.output( LED, True )
