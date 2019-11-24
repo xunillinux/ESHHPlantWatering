@@ -2,15 +2,17 @@
 from flask import Flask, request
 from RPi import GPIO
 import sys
-
 sys.path.append('.')
 sys.path.append('./api')
+sys.path.append('./handler')
 
 from Controller import Controller
+from Handler import Handler
 
 app = Flask( __name__ )
 
 api_controller = Controller()
+hanlder = Handler()
 
 @app.route( "/app/GetHumidityValues", methods=["GET"] )
 def GetHumidityValues():
@@ -24,9 +26,9 @@ def GetBrightnessValues():
 def GetTemperatureValues():
     return api_controller.GetTemperatureValues()
 
-@app.route( "/app/GetFotos", methods=["GET"] )
-def GetFotos():
-    return api_controller.GetFotos()
+@app.route( "/app/GetPhotos", methods=["GET"] )
+def GetPhotos():
+    return api_controller.GetPhotos()
 
 @app.route( "/app/GetSettings", methods=["GET"] )
 def GetSettings():
@@ -37,3 +39,8 @@ def SetSettings():
     humidity_threshhold = request.args.get('humidity_threshhold', 0)
     pump_water_amount  = request.args.get('pump_water_amount', 0)
     api_controller.SetSettings(humidity_threshhold, pump_water_amount)
+
+@app.route( "/app/ActivatePump", methods=["POST"] )
+def ActivatePump():
+    handler.ExecutePump()
+    return "OK"

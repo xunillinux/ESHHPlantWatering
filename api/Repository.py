@@ -39,14 +39,14 @@ class Repository:
         return self.GetJsonResultFromCursor(cursor)
     
 
-    def SetFoto(self, foto_path):
+    def SetPhoto(self, photo_path):
         cursor = self.db_connection.cursor()
-        cursor.execute("INSERT INTO foto (foto_path) VALUES (%s)", (foto_path))
+        cursor.execute("INSERT INTO photo (photo_path) VALUES (%s)", (photo_path))
         self.db_connection.commit()
 
-    def GetFotos(self):
+    def GetPhotos(self):
         cursor = self.db_connection.cursor()
-        cursor.execute("SELECT foto_path, measure_date from foto")
+        cursor.execute("SELECT photo_path, measure_date from photo")
         return self.GetJsonResultFromCursor(cursor)
 
 

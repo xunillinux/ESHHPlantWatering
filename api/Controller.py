@@ -26,12 +26,12 @@ class Controller:
         return self.repo.GetTemperatureValues()
     
 
-    def SetFoto(self, foto_path):
-        #TODO implement saving of foto to /var/www/html/fotos
-        self.repo.SetFoto(foto_path)
+    def SetPhoto(self, img):
+        #TODO implement saving of photo to /var/www/html/photos
+        self.repo.SetPhoto("photo_path")
 
-    def GetFotos(self):
-        return self.repo.GetFotos()
+    def GetPhotos(self):
+        return self.repo.GetPhotos()
 
 
     def SetSettings(self, humidity_threshhold, pump_water_amount):

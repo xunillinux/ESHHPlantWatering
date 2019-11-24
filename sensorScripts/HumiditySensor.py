@@ -1,12 +1,15 @@
 from MCP3008 import MCP3008 
-import time
 
-adc = MCP3008()
-try:
-    while True:
-        value = adc.read( channel = 0 )
-        print("Voltage: %.2f" % (value / 1023.0 * 3.3) )
-        time.sleep(0.5)
-except KeyboardInterrupt:
-    exit()
+class HumiditySensor:
+
+    def __init__(self):
+        self.adc = MCP3008()
     
+    def Measure(self):
+        #TODO measure few times over a second and take average
+        value = adc.read( channel = 0 )
+        convertedValue = value / 1023.0 * 3.3
+
+    def Log(self):
+        #TODO
+        print("TODO")
