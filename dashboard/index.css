@@ -1,0 +1,75 @@
+/*css for Webinterface */
+
+.container-fluid{
+    /*background-color: red;*/
+}
+#contentContainer{
+    /*height: 95%;*/
+    /*background-color: darkslategray;*/
+}
+
+#header{
+    /*background-color: yellow;*/
+}
+
+#dashboard-left{
+    /*background-color: green;*/
+}
+
+#dashboard-right{
+    /*background-color: blue;*/
+}
+
+#content-dashboard-left{
+    /*background-color: blueviolet;*/
+}
+
+#content-dashboard-right{
+    /*background-color: pink;*/
+}
+
+#status{
+    /*background-color: lightsalmon;*/
+}
+
+#controls{
+    /*background-color: orange;*/
+}
+
+#images{
+    /*background-color: brown;*/
+}
+
+#humidityInput{
+    width: 100px;
+} 
+
+#waterInput{
+    width: 100px;
+} 
+
+#controlsTable{
+    /**/border: none;
+}
+
+.td-first{
+    height: 200px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.td-past{
+    height: 150px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
+img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+
