@@ -6,6 +6,9 @@ class Repository:
     def __init__(self):
         self.db_connection = mariadb.connect(user='dbuser', password='Welcome$16', database='plantwateringdb')
     
+    def SetHumidityValues():
+        
+
     def GetHumidityValues():
         cursor = self.db_connection.cursor()
         cursor.execute("SELECT humidity_value, measure_date from humidity")
@@ -26,8 +29,12 @@ class Repository:
         cursor.execute("SELECT foto_path, measure_date from foto")
         return GetJsonResultFromCursor(cursor)
 
-    def GetHumidityThreshhold():
-        
+    def GetSettings():
+        cursor = self.db_connection.cursor()
+        cursor.execute("SELECT humidity_threshhold, pump_water_amount from settings WHERE id=1")
+        return GetJsonResultFromCursor(cursor)
+
+
 
     def GetJsonResultFromCursor():
         row_headers=[x[0] for x in cursor.description] #this will extract row headers
