@@ -17,7 +17,7 @@ class Handler:
     def __init__(self):
         self.controller = Controller()
         self.humiditySensor = HumiditySensor()
-        self.brightnessSensor = brightnessSensor()
+        self.brightnessSensor = BrightnessSensor()
         self.temperatureSensor = TemperatureSensor()
         self.camera = Camera()
         self.pump = Pump()

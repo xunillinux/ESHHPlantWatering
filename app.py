@@ -4,7 +4,7 @@ from RPi import GPIO
 import sys
 sys.path.append('.')
 sys.path.append('./api')
-sys.path.append('./handler')
+sys.path.append('./Handler')
 
 from Controller import Controller
 from Handler import Handler
@@ -12,7 +12,7 @@ from Handler import Handler
 app = Flask( __name__ )
 
 api_controller = Controller()
-hanlder = Handler()
+handler = Handler()
 
 @app.route( "/app/GetHumidityValues", methods=["GET"] )
 def GetHumidityValues():
