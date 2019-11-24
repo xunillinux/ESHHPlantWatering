@@ -8,9 +8,27 @@ class Repository:
     
     def GetHumidityValues():
         cursor = self.db_connection.cursor()
-        cursor.execute("SELECT value, timestamp from humidity")
+        cursor.execute("SELECT humidity_value, measure_date from humidity")
         return GetJsonResultFromCursor(cursor)
     
+    def GetBrightnessValues():
+        cursor = self.db_connection.cursor()
+        cursor.execute("SELECT brightness_value, measure_date from brightness")
+        return GetJsonResultFromCursor(cursor)
+    
+    def GetTemperatureValues():
+        cursor = self.db_connection.cursor()
+        cursor.execute("SELECT temperature_value, measure_date from temperature")
+        return GetJsonResultFromCursor(cursor)
+    
+    def GetFotos():
+        cursor = self.db_connection.cursor()
+        cursor.execute("SELECT foto_path, measure_date from foto")
+        return GetJsonResultFromCursor(cursor)
+
+    def GetHumidityThreshhold():
+        
+
     def GetJsonResultFromCursor():
         row_headers=[x[0] for x in cursor.description] #this will extract row headers
         rv = cursor.fetchall()
