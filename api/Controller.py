@@ -3,7 +3,7 @@ from Repository import Repository
 class Controller:
 
     def __init__(self):
-            self.repo = Repository()
+        self.repo = Repository()
 
     def AddHumidityValue(humidity_value):
         self.repo.AddHumidityValue(humidity_value)
