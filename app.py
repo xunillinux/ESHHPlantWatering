@@ -1,38 +1,34 @@
 #!/usr/bin/env python3
 from flask import Flask, request
 from RPi import GPIO
+from api import Controller
 
 app = Flask( __name__ )
 
-LED    = 18
-BUTTON = 23
+self.api_controller = Controller()
 
-GPIO.setmode( GPIO.BCM )
-GPIO.setup( LED, GPIO.OUT )
-GPIO.output( LED, True )
+@app.route( "/api/GetHumidityValues", methods=["GET"] )
+def GetHumidityValues():
+    return self.api_controller.GetHumidityValues()
 
-GPIO.setup( BUTTON, GPIO.IN )
+@app.route( "/api/GetBrightnessValues", methods=["GET"] )
+def GetBrightnessValues():
+    return self.api_controller.GetBrightnessValues()
 
-@app.route( "/app/led", methods=["POST"] )
-def ledcontroller():
-    state = request.form["state"]
+@app.route( "/api/GetTemperatureValues", methods=["GET"] )
+def GetTemperatureValues():
+    return self.api_controller.GetTemperatureValues()
 
-    if state == "on":
-        GPIO.output( LED, False )
-        return "LED is on"
+@app.route( "/api/GetFotos", methods=["GET"] )
+def GetFotos():
+    return self.api_controller.GetFotos()
 
-    if state == "off":
-        GPIO.output( LED, True )
-        return "LED is off"
+@app.route( "/api/GetSettings", methods=["GET"] )
+def GetSettings():
+    return self.api_controller.GetSettings()
 
-    return "LED unchanged"
-
-@app.route( "/app/button/<nr>" )
-def buttoncontroller( nr ):
-    if nr == "0":
-        if GPIO.input(BUTTON):
-            return "1"
-        else:
-            return "0"
-
-    return "invalid URL"
+@app.route( "/api/SetSettings", methods=["POST"] )
+def SetSettings():
+    humidity_threshhold = request.args.get('humidity_threshhold', 0)
+    pump_water_amount  = request.args.get('pump_water_amount', 0)
+    api_controller.SetSettings(humidity_threshhold, pump_water_amount)
