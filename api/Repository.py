@@ -69,4 +69,4 @@ class Repository:
         json_data=[]
         for result in rv:
                 json_data.append(dict(zip(row_headers,result)))
-        return json.dumps(json_data)
+        return json.dumps(json_data, default=str)
