@@ -47,7 +47,7 @@ location /app/ {
 
 15. sudo reboot
 
-16. sudo cp /home/pi/flask/www/* /var/www/html
+16. sudo cp -r /home/pi/flask/dashboard/* /var/www/html
 
 ### MariaDB
 
