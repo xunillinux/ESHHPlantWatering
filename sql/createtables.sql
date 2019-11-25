@@ -38,3 +38,4 @@ CREATE TABLE IF NOT EXISTS settings(
 	pump_water_amount INT NOT NULL,
 	PRIMARY KEY ( id )
 );
+INSERT INTO settings (humidity_threshhold, pump_water_amount) VALUES (250,100);
