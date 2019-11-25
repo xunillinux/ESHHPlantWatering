@@ -13,11 +13,11 @@ StepPinForward=32
 def pumpforward():
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(StepPinForward, GPIO.OUT)
-    print "Pump running for 5s"
+    print("Pump running for 5s")
     time.sleep(3)
     GPIO.cleanup()
     time.sleep(3)
-    print "sleep for 5s"
+    print("sleep for 5s")
 
 try:
     while True:
