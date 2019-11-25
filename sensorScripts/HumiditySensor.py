@@ -8,6 +8,7 @@ class HumiditySensor:
     def Measure(self):
         #TODO measure few times over a second and take average
         value = self.adc.read( channel = 0 )
+	print (value)
         convertedValue = value / 1023.0 * 3.3
 
     def Log(self):
