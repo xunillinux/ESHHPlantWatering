@@ -27,7 +27,7 @@ class Handler:
         self.ExectueTemperatureSensor()
         self.ExecuteCamera()
         humidity = self.ExecuteHumiditySensor()
-        if(self.HumidityBelowThreshhold()):
+        if(self.HumidityBelowThreshhold(humidity)):
             self.ExecutePump()
     
     def ExecuteHumiditySensor(self):
@@ -55,15 +55,14 @@ class Handler:
     
     def ExecutePump(self):
         settings = json.loads(self.controller.GetSettings())
-        waterAmount = settings[0]["pump_water_amount"]
-        pumpTime = self.pump.ConvertWaterAmountInCLToSeconds(waterAmount)
-        self.pump.ExecuteForSeconds(pumpTime)
+        waterAmountCl = settings[0]["pump_water_amount"]
+        self.pump.ExecutePump(waterAmountCl)
         #TODO LOG
     
     def HumidityBelowThreshhold(self, humidity):
         settings = json.loads(self.controller.GetSettings())
         humidityThreshhold = settings[0]["humidity_threshhold"]
-        return humidityValue < humidityThreshhold
+        return humidity < humidityThreshhold
 
     def Log(self):
         #TODO
