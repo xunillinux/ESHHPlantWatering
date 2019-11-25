@@ -93,4 +93,18 @@ if correctly setup it should print Id: 1, Water Amount: 42
 
 33. sudo reboot
 
+### Configure Camera
+
+34. sudo raspi-config
+
+35. Interfaces -> Activate Camera
+
+36. sudo reboot
+
+### Python Libraries (Adafruit)
+
+37. cd /home/pi/flask/libraries/Adafruit_Python_DHT
+
+38. sudo python setup.py install
+
 
