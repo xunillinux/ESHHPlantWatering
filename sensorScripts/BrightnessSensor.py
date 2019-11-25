@@ -4,8 +4,7 @@ import time
 class BrightnessSensor:
 
 	def __init__(self):
-		self.pin_to_circuit = 17
-
+		self.pin_to_circuit = 11
 	def Measure(self):
 		GPIO.setmode(GPIO.BOARD)
 		#TODO measure few times over a second and take average
