@@ -1,6 +1,6 @@
 import json
 
-import Controller
+from api.Controller import Controller
 from sensorScripts.HumiditySensor import HumiditySensor
 from sensorScripts.BrightnessSensor import BrightnessSensor
 from sensorScripts.TemperatureSensor import TemperatureSensor
