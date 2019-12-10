@@ -1,16 +1,11 @@
-import sys
-sys.path.append('.')
-sys.path.append('./api')
-sys.path.append('./sensorScripts')
-
 import json
 
-from Controller import Controller
-from HumiditySensor import HumiditySensor
-from BrightnessSensor import BrightnessSensor
-from TemperatureSensor import TemperatureSensor
-from Camera import Camera
-from Pump import Pump
+import Controller
+from sensorScripts.HumiditySensor import HumiditySensor
+from sensorScripts.BrightnessSensor import BrightnessSensor
+from sensorScripts.TemperatureSensor import TemperatureSensor
+from sensorScripts.Camera import Camera
+from sensorScripts.Pump import Pump
 
 class Handler:
 
