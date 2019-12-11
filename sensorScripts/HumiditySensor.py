@@ -1,4 +1,4 @@
-from app.MCP3008 import MCP3008 
+from sensorScripts.MCP3008 import MCP3008 
 
 class HumiditySensor:
 

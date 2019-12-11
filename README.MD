@@ -26,7 +26,7 @@ https://www.raspberrypi.org/downloads/raspbian/
 
 6. virtualenv appenv
 7. source appenv/bin/activate
-8. pip install uwsgi flask rpi.gpio
+8. pip3 install uwsgi flask rpi.gpio
 9. deactivate
 
 10. cp app.service /etc/systemd/system
@@ -67,9 +67,9 @@ location /app/ {
 
 23. exit
 
-24. pip install mysql-connector-python-rf
+24. pip3 install mysql-connector-python-rf
 
-25. python /home/pi/flask/sql/dbtest.py
+25. python3 /home/pi/flask/sql/dbtest.py
 
 if correctly setup it should print Id: 1, Water Amount: 42
 
@@ -83,7 +83,7 @@ if correctly setup it should print Id: 1, Water Amount: 42
 
 29. cd py-spidev-master
 
-30. sudo python setup.py install
+30. sudo python3 setup.py install
 
 ### Configure SPI
 
@@ -105,6 +105,6 @@ if correctly setup it should print Id: 1, Water Amount: 42
 
 37. cd /home/pi/flask/libraries/Adafruit_Python_DHT
 
-38. sudo python setup.py install
+38. sudo python3 setup.py install
 
 

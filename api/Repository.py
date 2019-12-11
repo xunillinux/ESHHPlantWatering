@@ -1,4 +1,4 @@
-import mysql.connector as mariadb
+from mysql import connector as mariadb
 import json
 
 class Repository:
