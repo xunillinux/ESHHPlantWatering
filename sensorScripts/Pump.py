@@ -1,5 +1,5 @@
 import sys
-import RPi.GPIO as GPIO
+from RPi import GPIO
 import time
 
 class Pump:

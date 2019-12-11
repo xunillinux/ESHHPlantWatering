@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
+
 from flask import Flask, request
-from RPi import GPIO
-
-
-from api import Controller
-from Handler import Handler
+from api.Controller import Controller
+from Handler.Handler import Handler
 
 app = Flask( __name__ )
 
