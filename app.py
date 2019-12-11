@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
 from flask import Flask, request
 from RPi import GPIO
-import sys
-sys.path.append('.')
-sys.path.append('./api')
-sys.path.append('./Handler')
 
-from Controller import Controller
+
+from api import Controller
 from Handler import Handler
 
 app = Flask( __name__ )
