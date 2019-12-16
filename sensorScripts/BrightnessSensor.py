@@ -23,7 +23,3 @@ class BrightnessSensor:
 		while(GPIO.input(pin_to_circuit) == GPIO.LOW):
 			count += 1
 		return count
-
-	def Log(self):
-		#TODO
-		print("TODO")

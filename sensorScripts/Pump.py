@@ -16,7 +16,3 @@ class Pump:
 
     def ConvertWaterAmountInCLToSeconds(self, waterAmountCl):
         return waterAmountCl / 2.5
-
-    def Log(self):
-        #TODO
-        print("TODO")
