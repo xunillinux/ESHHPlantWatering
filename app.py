@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 
 from flask import Flask, request
+
 from api.Controller import Controller
 from Handler.Handler import Handler
 
 app = Flask( __name__ )
+
+@app.route('/app')
+def apiDefinition():
+    return 'API Definition: GetHumidityValues, blabla'
 
 api_controller = Controller()
 handler = Handler()
@@ -39,3 +44,6 @@ def SetSettings():
 def ActivatePump():
     handler.ExecutePump()
     return "OK"
+
+if __name__ == "__main__":
+    app.run()
