@@ -24,7 +24,7 @@ https://www.raspberrypi.org/downloads/raspbian/
 
 5. cd flask
 
-6. virtualenv appenv
+6. virtualenv -p python3 appenv
 7. source appenv/bin/activate
 8. pip3 install uwsgi flask rpi.gpio
 9. deactivate
