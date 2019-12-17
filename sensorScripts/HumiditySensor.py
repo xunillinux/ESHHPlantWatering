@@ -9,7 +9,3 @@ class HumiditySensor:
 		#TODO measure few times over a second and take average
 		value = self.adc.read( channel = 0 )
 		return value
-
-	def Log(self):
-		#TODO
-		print("TODO")

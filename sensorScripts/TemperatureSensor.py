@@ -10,7 +10,3 @@ class TemperatureSensor:
 		#TODO measure few times over a second and take average
 		humidity, temperature = Adafruit_DHT.read_retry(self.sensor, self.PIN)
 		return temperature
-
-	def Log(self):
-		#TODO
-		print("TODO")
