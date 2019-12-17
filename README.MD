@@ -69,11 +69,17 @@ location /app/ {
 
 24. pip3 install mysql-connector-python-rf
 
+24.1 (in flask dir) source appenv/bin/activate
+
+24.2 (in flask dir) pip3 install mysql-connector-python-rf
+
+24.3 (in flask dir) deactivate
+
 25. python3 /home/pi/flask/sql/dbtest.py
 
 if correctly setup it should print Id: 1, Water Amount: 42
 
-### SpyDev Installation
+### SpiDev Installation
 
 26. cd
 
@@ -84,6 +90,12 @@ if correctly setup it should print Id: 1, Water Amount: 42
 29. cd py-spidev-master
 
 30. sudo python3 setup.py install
+
+30.1 (in flask dir) source appenv/bin/activate
+
+30.2 (in flask dir) pip3 install spidev
+
+30.3 (in flask dir) deactivate
 
 ### Configure SPI
 
@@ -106,5 +118,11 @@ if correctly setup it should print Id: 1, Water Amount: 42
 37. cd /home/pi/flask/libraries/Adafruit_Python_DHT
 
 38. sudo python3 setup.py install
+
+38.1 (in flask dir) source appenv/bin/activate
+
+38.2 (in flask dir) pip3 install Adafruit_DHT
+
+38.3 (in flask dir) deactivate
 
 
