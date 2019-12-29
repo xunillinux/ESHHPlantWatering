@@ -1123,3 +1123,12 @@ INFO:root:Handler.py: Executing BrightnessSensor
 INFO:root:Handler.py: Executing TemperatureSensor
 INFO:root:Handler.py: Executing Camera
 INFO:root:Handler.py: Executing HumiditySensor
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:58:00 CET)" skipped: maximum number of running instances reached (1)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:59:00+01:00 (in 59.991774 seconds)
+INFO:root:Handler.py: Executing Pump
+INFO:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:59:00 CET)" executed successfully
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:59:00 CET)" (scheduled at 2019-12-29 02:59:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 03:00:00+01:00 (in 59.993924 seconds)
+INFO:root:Handler.py: Executing BrightnessSensor
