@@ -1,0 +1,174 @@
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:No jobs; waiting until a job is added
+INFO:apscheduler.scheduler:Added job "startHandlerJob" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:No jobs; waiting until a job is added
+INFO:apscheduler.scheduler:Added job "startHandlerJob" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:No jobs; waiting until a job is added
+INFO:apscheduler.scheduler:Added job "startHandlerJob" to job store "default"
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "startHandlerJob" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:29:00+01:00 (in 30.009197 seconds)
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "startHandlerJob" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:30:00+01:00 (in 4.978329 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:30:00 CET)" (scheduled at 2019-12-29 01:30:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:31:00+01:00 (in 59.997898 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:31:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 9, in startHandlerJob
+    handler.ExecuteAllSensors()
+NameError: name 'handler' is not defined
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:31:00 CET)" (scheduled at 2019-12-29 01:31:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:32:00+01:00 (in 59.992473 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:32:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 9, in startHandlerJob
+    handler.ExecuteAllSensors()
+NameError: name 'handler' is not defined
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "startHandlerJob" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:32:00+01:00 (in 20.988271 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:32:00 CET)" (scheduled at 2019-12-29 01:32:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:33:00+01:00 (in 59.997926 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:33:00 CET)" skipped: maximum number of running instances reached (1)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:34:00+01:00 (in 59.962882 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:34:00 CET)" skipped: maximum number of running instances reached (1)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:35:00+01:00 (in 59.985713 seconds)
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "startHandlerJob" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:35:00+01:00 (in 18.214084 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:35:00 CET)" (scheduled at 2019-12-29 01:35:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:36:00+01:00 (in 59.997196 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:36:00 CET)" skipped: maximum number of running instances reached (1)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:37:00+01:00 (in 59.987096 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:37:00 CET)" skipped: maximum number of running instances reached (1)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:38:00+01:00 (in 59.975588 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:38:00 CET)" skipped: maximum number of running instances reached (1)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:39:00+01:00 (in 59.991314 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:39:00 CET)" skipped: maximum number of running instances reached (1)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:40:00+01:00 (in 59.975843 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:40:00 CET)" skipped: maximum number of running instances reached (1)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:41:00+01:00 (in 59.981205 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:41:00 CET)" skipped: maximum number of running instances reached (1)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:42:00+01:00 (in 59.986503 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:42:00 CET)" skipped: maximum number of running instances reached (1)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:43:00+01:00 (in 59.950437 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:43:00 CET)" skipped: maximum number of running instances reached (1)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:44:00+01:00 (in 59.981084 seconds)
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "startHandlerJob" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:44:00+01:00 (in 47.041199 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:44:00 CET)" (scheduled at 2019-12-29 01:44:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:45:00+01:00 (in 59.997988 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:45:00 CET)" (scheduled at 2019-12-29 01:45:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:46:00+01:00 (in 59.981594 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:46:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:47:00+01:00 (in 59.459044 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:47:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:48:00+01:00 (in 59.933845 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:48:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:49:00+01:00 (in 59.956551 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:49:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:50:00+01:00 (in 59.757789 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:50:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:51:00+01:00 (in 59.569584 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:51:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:52:00+01:00 (in 59.957644 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:52:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:53:00+01:00 (in 59.320907 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:53:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:54:00+01:00 (in 59.824559 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:54:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:55:00+01:00 (in 59.970491 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:55:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:56:00+01:00 (in 59.825770 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:56:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:57:00+01:00 (in 59.966447 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:57:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:58:00+01:00 (in 59.943035 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:58:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 01:59:00+01:00 (in 59.708967 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 01:59:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:00:00+01:00 (in 59.935272 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:00:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:01:00+01:00 (in 59.787710 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:01:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:02:00+01:00 (in 59.806147 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:02:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:03:00+01:00 (in 59.660862 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:03:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:04:00+01:00 (in 59.840128 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:04:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:05:00+01:00 (in 59.530109 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:05:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:06:00+01:00 (in 59.955858 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:06:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:07:00+01:00 (in 59.964870 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:07:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:08:00+01:00 (in 59.646446 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:08:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:09:00+01:00 (in 59.954482 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:09:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:10:00+01:00 (in 59.722006 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:10:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:11:00+01:00 (in 59.945540 seconds)

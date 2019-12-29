@@ -125,4 +125,18 @@ if correctly setup it should print Id: 1, Water Amount: 42
 
 38.3 (in flask dir) deactivate
 
+### Python Libraries (Flask-APScheduler)
 
+39.1 (in flask dir) source appenv/bin/activate
+
+39.2 (in flask dir) pip3 install Adafruit_DHT
+
+39.3 (in flask dir) deactivate
+
+### Configure Scheduler Systemd service
+
+40. sudo cp scheduler.service /etc/systemd/system
+
+41. sudo systemctl start scheduler
+
+42. sudo systemctl enable scheduler

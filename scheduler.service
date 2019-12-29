@@ -1,0 +1,13 @@
+[Unit]
+Description=scheduler
+After=network.target
+
+[Service]
+User=pi
+Group=www-data
+WorkingDirectory=/home/pi/flask
+Environment="PATH=/home/pi/flask/appenv/bin"
+ExecStart=/home/pi/flask/appenv/bin/python3 scheduler.py
+
+[Install]
+WantedBy=multi-user.target

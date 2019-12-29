@@ -20,6 +20,6 @@ class BrightnessSensor:
 		time.sleep(0.1)
 		GPIO.setup(pin_to_circuit, GPIO.IN)
 		#Raise counter until pin goes high
-		while(GPIO.input(pin_to_circuit) == GPIO.LOW):
+		while(GPIO.input(pin_to_circuit) == GPIO.LOW and count<1500):
 			count += 1
 		return count
