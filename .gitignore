@@ -2,3 +2,5 @@ appenv/
 __pycache__/
 app.sock
 *.pyc
+
+*.log
