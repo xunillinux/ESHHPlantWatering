@@ -50,7 +50,7 @@ def SetSettings():
     logging.info("app.py: API-call SetSettings(humidity_threshhold=%s,pump_water_amount=%s)" % (humidity_threshhold,pump_water_amount))
     api_controller.SetSettings(humidity_threshhold, pump_water_amount)
 
-@app.route( "/app/ActivatePump", methods=["GET"] )
+@app.route( "/app/ActivatePump", methods=["POST"] )
 def ActivatePump():
     logging.info("app.py: API-call ActivatePump")
     handler.ExecutePump()
