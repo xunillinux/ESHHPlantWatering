@@ -59,6 +59,7 @@ class Handler:
     
     def HumidityBelowThreshhold(self, humidity):
         settings = json.loads(self.controller.GetSettings())
+        print(settings)
         humidityThreshhold = settings[0]["humidity_threshhold"]
         return humidity < humidityThreshhold
     

@@ -172,3 +172,954 @@ DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:10:00+01:00 (in 
 DEBUG:apscheduler.scheduler:Looking for jobs to run
 WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:10:00 CET)" skipped: maximum number of running instances reached (2)
 DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:11:00+01:00 (in 59.945540 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:11:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:12:00+01:00 (in 59.934844 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:12:00 CET)" skipped: maximum number of running instances reached (2)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:13:00+01:00 (in 59.858653 seconds)
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "startHandlerJob" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:13:00+01:00 (in 15.936911 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:13:00 CET)" (scheduled at 2019-12-29 02:13:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:14:00+01:00 (in 59.998229 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:14:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%s)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:14:00 CET)" (scheduled at 2019-12-29 02:14:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:15:00+01:00 (in 59.991846 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:15:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%s)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:15:00 CET)" (scheduled at 2019-12-29 02:15:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:16:00+01:00 (in 59.992541 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:16:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%s)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:16:00 CET)" (scheduled at 2019-12-29 02:16:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:17:00+01:00 (in 59.992000 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:17:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%s)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:17:00 CET)" (scheduled at 2019-12-29 02:17:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:18:00+01:00 (in 59.990346 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:18:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%s)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:18:00 CET)" (scheduled at 2019-12-29 02:18:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:19:00+01:00 (in 59.992433 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:19:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%s)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:19:00 CET)" (scheduled at 2019-12-29 02:19:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:20:00+01:00 (in 59.992715 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:20:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%s)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:20:00 CET)" (scheduled at 2019-12-29 02:20:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:21:00+01:00 (in 59.991899 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:21:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%s)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:21:00 CET)" (scheduled at 2019-12-29 02:21:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:22:00+01:00 (in 59.991213 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:22:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%s)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:22:00 CET)" (scheduled at 2019-12-29 02:22:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:23:00+01:00 (in 59.992746 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:23:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%s)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:24:00+01:00 (in 59.992114 seconds)
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:24:00 CET)" (scheduled at 2019-12-29 02:23:00+01:00)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:24:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%s)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:25:00+01:00 (in 59.994595 seconds)
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:25:00 CET)" (scheduled at 2019-12-29 02:24:00+01:00)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:25:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%s)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:26:00+01:00 (in 59.974828 seconds)
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:26:00 CET)" (scheduled at 2019-12-29 02:25:00+01:00)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:26:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%s)' at line 1
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "startHandlerJob" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:26:00+01:00 (in 12.569211 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:26:00 CET)" (scheduled at 2019-12-29 02:26:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:27:00+01:00 (in 59.998155 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:27:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%d)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:27:00 CET)" (scheduled at 2019-12-29 02:27:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:28:00+01:00 (in 59.991740 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:28:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:28:00 CET)" (scheduled at 2019-12-29 02:28:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:29:00+01:00 (in 59.992205 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:29:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:29:00 CET)" (scheduled at 2019-12-29 02:29:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:30:00+01:00 (in 59.992396 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:30:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:30:00 CET)" (scheduled at 2019-12-29 02:30:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:31:00+01:00 (in 59.992470 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:31:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:31:00 CET)" (scheduled at 2019-12-29 02:31:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:32:00+01:00 (in 59.992517 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:32:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:32:00 CET)" (scheduled at 2019-12-29 02:32:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:33:00+01:00 (in 59.992599 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:33:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:33:00 CET)" (scheduled at 2019-12-29 02:33:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:34:00+01:00 (in 59.992083 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:34:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value,))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:34:00 CET)" (scheduled at 2019-12-29 02:34:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:35:00+01:00 (in 59.984773 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:35:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value,))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:35:00 CET)" (scheduled at 2019-12-29 02:35:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:36:00+01:00 (in 59.992473 seconds)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:36:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value,))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:37:00+01:00 (in 59.992181 seconds)
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:37:00 CET)" (scheduled at 2019-12-29 02:36:00+01:00)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:37:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value,))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:38:00+01:00 (in 59.994865 seconds)
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:38:00 CET)" (scheduled at 2019-12-29 02:37:00+01:00)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:38:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value,))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:39:00+01:00 (in 59.996757 seconds)
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:39:00 CET)" (scheduled at 2019-12-29 02:38:00+01:00)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:39:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value,))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:40:00+01:00 (in 59.993829 seconds)
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:40:00 CET)" (scheduled at 2019-12-29 02:39:00+01:00)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:40:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value,))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:41:00+01:00 (in 59.994317 seconds)
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:41:00 CET)" (scheduled at 2019-12-29 02:40:00+01:00)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:41:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value,))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:42:00+01:00 (in 59.994031 seconds)
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:42:00 CET)" (scheduled at 2019-12-29 02:41:00+01:00)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:42:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value,))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:43:00+01:00 (in 59.993208 seconds)
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:43:00 CET)" (scheduled at 2019-12-29 02:42:00+01:00)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:43:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value,))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:44:00+01:00 (in 59.994435 seconds)
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:44:00 CET)" (scheduled at 2019-12-29 02:43:00+01:00)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:44:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value,))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:45:00+01:00 (in 59.993963 seconds)
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:45:00 CET)" (scheduled at 2019-12-29 02:44:00+01:00)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:45:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value,))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:46:00+01:00 (in 59.994292 seconds)
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:46:00 CET)" (scheduled at 2019-12-29 02:45:00+01:00)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:46:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value,))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:47:00+01:00 (in 59.994264 seconds)
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:47:00 CET)" (scheduled at 2019-12-29 02:46:00+01:00)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:47:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value,))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:48:00+01:00 (in 59.994414 seconds)
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:48:00 CET)" (scheduled at 2019-12-29 02:47:00+01:00)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:48:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value,))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:49:00+01:00 (in 59.993564 seconds)
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:49:00 CET)" (scheduled at 2019-12-29 02:48:00+01:00)
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:49:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 22, in ExecuteAllSensors
+    self.ExecuteBrightnessSensor()
+  File "/home/pi/flask/Handler/Handler.py", line 37, in ExecuteBrightnessSensor
+    self.controller.AddBrightnessValue(brightnessValue)
+  File "/home/pi/flask/api/Controller.py", line 16, in AddBrightnessValue
+    self.repo.AddBrightnessValue(brightness_value)
+  File "/home/pi/flask/api/Repository.py", line 22, in AddBrightnessValue
+    cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value,))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/cursor.py", line 551, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%d)' at line 1
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "startHandlerJob" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:50:00+01:00 (in 55.301000 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:50:00 CET)" (scheduled at 2019-12-29 02:50:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:51:00+01:00 (in 59.998830 seconds)
+INFO:root:Handler.py: Executing BrightnessSensor
+INFO:root:Handler.py: Executing TemperatureSensor
+INFO:root:Handler.py: Executing Camera
+INFO:root:Handler.py: Executing HumiditySensor
+ERROR:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:51:00 CET)" raised an exception
+Traceback (most recent call last):
+  File "/home/pi/flask/appenv/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "scheduler.py", line 11, in startHandlerJob
+    handler.ExecuteAllSensors()
+  File "/home/pi/flask/Handler/Handler.py", line 26, in ExecuteAllSensors
+    if(self.HumidityBelowThreshhold(humidity)):
+  File "/home/pi/flask/Handler/Handler.py", line 62, in HumidityBelowThreshhold
+    humidityThreshhold = settings[0]["humidity_threshhold"]
+IndexError: list index out of range
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:51:00 CET)" (scheduled at 2019-12-29 02:51:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:52:00+01:00 (in 59.995060 seconds)
+INFO:root:Handler.py: Executing BrightnessSensor
+INFO:root:Handler.py: Executing TemperatureSensor
+INFO:root:Handler.py: Executing Camera
+INFO:root:Handler.py: Executing HumiditySensor
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:52:00 CET)" skipped: maximum number of running instances reached (1)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:53:00+01:00 (in 59.992507 seconds)
+INFO:root:Handler.py: Executing Pump
+INFO:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:53:00 CET)" executed successfully
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:53:00 CET)" (scheduled at 2019-12-29 02:53:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:54:00+01:00 (in 59.994342 seconds)
+INFO:root:Handler.py: Executing BrightnessSensor
+INFO:root:Handler.py: Executing TemperatureSensor
+INFO:root:Handler.py: Executing Camera
+INFO:root:Handler.py: Executing HumiditySensor
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:54:00 CET)" skipped: maximum number of running instances reached (1)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:55:00+01:00 (in 59.992269 seconds)
+INFO:root:Handler.py: Executing Pump
+INFO:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:55:00 CET)" executed successfully
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:55:00 CET)" (scheduled at 2019-12-29 02:55:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:56:00+01:00 (in 59.994015 seconds)
+INFO:root:Handler.py: Executing BrightnessSensor
+INFO:root:Handler.py: Executing TemperatureSensor
+INFO:root:Handler.py: Executing Camera
+INFO:root:Handler.py: Executing HumiditySensor
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+WARNING:apscheduler.scheduler:Execution of job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:56:00 CET)" skipped: maximum number of running instances reached (1)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:57:00+01:00 (in 59.976960 seconds)
+INFO:root:Handler.py: Executing Pump
+INFO:apscheduler.executors.default:Job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:57:00 CET)" executed successfully
+INFO:apscheduler.scheduler:Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO:apscheduler.scheduler:Added job "startHandlerJob" to job store "default"
+INFO:apscheduler.scheduler:Scheduler started
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:57:00+01:00 (in 13.673635 seconds)
+DEBUG:apscheduler.scheduler:Looking for jobs to run
+INFO:apscheduler.executors.default:Running job "startHandlerJob (trigger: cron[minute='*'], next run at: 2019-12-29 02:57:00 CET)" (scheduled at 2019-12-29 02:57:00+01:00)
+DEBUG:apscheduler.scheduler:Next wakeup is due at 2019-12-29 02:58:00+01:00 (in 59.997700 seconds)
+INFO:root:Handler.py: Executing BrightnessSensor
+INFO:root:Handler.py: Executing TemperatureSensor
+INFO:root:Handler.py: Executing Camera
+INFO:root:Handler.py: Executing HumiditySensor

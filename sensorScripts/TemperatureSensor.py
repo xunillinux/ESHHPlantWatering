@@ -7,6 +7,6 @@ class TemperatureSensor:
 		self.PIN = 4
 
 	def Measure(self):
-		#TODO measure few times over a second and take average
+		# Tries 15 times to get a sensor reading (waiting 2 seconds between each retry)
 		humidity, temperature = Adafruit_DHT.read_retry(self.sensor, self.PIN)
-		return temperature
+		return temperature if temperature is not None else 0

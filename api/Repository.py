@@ -6,9 +6,9 @@ class Repository:
     def __init__(self):
         self.db_connection = mariadb.connect(user='dbuser', password='Welcome$16', database='plantwateringdb')
     
-    def AddHumidityValue(self, humidity_value):
+    def AddHumidityValue(self, humidity_value = 0):
         cursor = self.db_connection.cursor()
-        cursor.execute("INSERT INTO humidity (humidity_value) VALUES (%s)", (humidity_value))
+        cursor.execute("INSERT INTO humidity (humidity_value) VALUES (%s)", (humidity_value,))
         self.db_connection.commit()
 
     def GetHumidityValues(self):
@@ -17,9 +17,9 @@ class Repository:
         return self.GetJsonResultFromCursor(cursor)
     
 
-    def AddBrightnessValue(self, brightness_value):
+    def AddBrightnessValue(self, brightness_value = 0):
         cursor = self.db_connection.cursor()
-        cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value))
+        cursor.execute("INSERT INTO brightness (brightness_value) VALUES (%s)", (brightness_value,))
         self.db_connection.commit()
     
     def GetBrightnessValues(self):
@@ -28,9 +28,9 @@ class Repository:
         return self.GetJsonResultFromCursor(cursor)
     
 
-    def AddTemperatureValue(self, temperature_value):
+    def AddTemperatureValue(self, temperature_value = 0):
         cursor = self.db_connection.cursor()
-        cursor.execute("INSERT INTO temperature (temperature_value) VALUES (%s)", (temperature_value))
+        cursor.execute("INSERT INTO temperature (temperature_value) VALUES (%s)", (temperature_value,))
         self.db_connection.commit()
     
     def GetTemperatureValues(self):
@@ -39,9 +39,9 @@ class Repository:
         return self.GetJsonResultFromCursor(cursor)
     
 
-    def SetPhoto(self, photo_path):
+    def SetPhoto(self, photo_path = ""):
         cursor = self.db_connection.cursor()
-        cursor.execute("INSERT INTO photo (photo_path) VALUES (%s)", (photo_path))
+        cursor.execute("INSERT INTO photo (photo_path) VALUES (%s)", (photo_path,))
         self.db_connection.commit()
 
     def GetPhotos(self):
@@ -50,7 +50,7 @@ class Repository:
         return self.GetJsonResultFromCursor(cursor)
 
 
-    def SetSettings(self, humidity_threshhold, pump_water_amount):
+    def SetSettings(self, humidity_threshhold = 250, pump_water_amount = 100):
         cursor = self.db_connection.cursor()
         cursor.execute("DELETE FROM settings WHERE id=1")
         cursor.execute("INSERT INTO settings (id, humidity_threshhold, pump_water_amount) VALUES (%s,%s, %s)", (1, humidity_threshhold, pump_water_amount))

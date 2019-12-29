@@ -74,3 +74,8 @@ Traceback (most recent call last):
     waterAmountCl = settings[0]["pump_water_amount"]
 IndexError: list index out of range
 INFO:root:app.py: API-call GetSettings
+INFO:root:app.py: API-call GetSettings
+INFO:root:app.py: API-call GetSettings
+INFO:root:app.py: API-call GetSettings
+INFO:root:app.py: API-call GetSettings
+INFO:root:app.py: API-call GetHumidityValues
