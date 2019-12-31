@@ -26,9 +26,8 @@ class Controller:
         return self.repo.GetTemperatureValues()
     
 
-    def SetPhoto(self, img):
-        #TODO implement saving of photo to /var/www/html/photos
-        self.repo.SetPhoto("photo_path")
+    def SetPhoto(self, photoPath):
+        self.repo.SetPhoto(photoPath)
 
     def GetPhotos(self):
         return self.repo.GetPhotos()

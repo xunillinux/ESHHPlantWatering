@@ -45,8 +45,8 @@ class Handler:
         return temperatureValue
     
     def ExecuteCamera(self):
-        photo = self.camera.TakePhoto()
-        self.controller.SetPhoto(photo)
+        photoPath = self.camera.TakePhoto()
+        self.controller.SetPhoto(photoPath)
         logging.info("Handler.py: Executing Camera")
 
     
