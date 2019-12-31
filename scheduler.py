@@ -13,5 +13,5 @@ def startHandlerJob():
 handler = Handler()
 
 scheduler = BlockingScheduler()
-scheduler.add_job(startHandlerJob,'cron', minute='*/2', max_instances=1)
+scheduler.add_job(startHandlerJob,'cron', hour='*', max_instances=1)
 scheduler.start()
