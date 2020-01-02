@@ -1,87 +1,173 @@
-//js for webinterface
-// Our labels along the x-axis
-var days = [1, 2, 3, 4, 5, 6, 7];
-// For drawing the lines
-var humidity = [50, 56, 52, 40, 60, 70, 77];
-var light = [3, 5, 4, 7, 6, 4, 3];
-var temperature = [20, 16, 15, 18, 22, 22, 23];
+$( document ).ready(function() {
 
+    function createHumidityChart(){
+        
+        $.get("/app/GetHumidityValues", function(data){
 
-window.onload = function(){
-    
-    var ctx = document.getElementById("humidityChart");
-    var ctx = document.getElementById("lightChart");
-    var ctx = document.getElementById("tempChart");
-    var humidityChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: days,
-        datasets: [
-        { 
-            data: humidity,
-            label: "Humidity"
-        }
-        ]
-    },
-    });
-/*
-    var lightChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: days,
-            datasets: [
-            { 
-                data: light,
-                label: "Light"
-            }
-            ]
-        }
+            //convert JSON data to arrays
+            var jsonData = $.parseJSON(data);
+            var humidityValues = [];
+            $.each(jsonData, function(idx, obj){
+                humidityValues.push(obj.humidity_value);
+            });
+            humidityValues = getLastSevenElements(humidityValues);
+            var timeStamps = [];
+            $.each(jsonData, function(idx, obj){
+                timeStamps.push(obj.measure_date);
+            });
+            timeStamps = getLastSevenElements(timeStamps);
+
+            //create Chart
+            var chartElement = $("#humidityChart");
+            createChart(chartElement, timeStamps, humidityValues, "Humidity"); 
+
+        }).fail(function(){
+            alert("could not get humidity values data");
         });
 
-    var tempChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: days,
-            datasets: [
-            { 
-                data: temperature,
-                label: "Temperature"
+    }
+
+    function createBrightnessChart(){
+        $.get("/app/GetBrightnessValues", function(data){
+
+            //convert JSON data to arrays
+            var jsonData = $.parseJSON(data);
+            var brightnessValues = [];
+            $.each(jsonData, function(idx, obj){
+                brightnessValues.push(obj.brightness_value);
+            });
+            brightnessValues = getLastSevenElements(brightnessValues);
+            var timeStamps = [];
+            $.each(jsonData, function(idx, obj){
+                timeStamps.push(obj.measure_date);
+            });
+            timeStamps = getLastSevenElements(timeStamps);
+
+            //create Chart
+            var chartElement = $("#brightnessChart");
+            createChart(chartElement, timeStamps, brightnessValues, "Brightness"); 
+
+        }).fail(function(){
+            alert("could not get brightness values data");
+        });
+    }
+
+    function createTempChart(){
+        $.get("/app/GetTemperatureValues", function(data){
+
+            //convert JSON data to arrays
+            var jsonData = $.parseJSON(data);
+            var temperatureValues = [];
+            $.each(jsonData, function(idx, obj){
+                temperatureValues.push(obj.temperature_value);
+            });
+            temperatureValues = getLastSevenElements(temperatureValues);
+            var timeStamps = [];
+            $.each(jsonData, function(idx, obj){
+                timeStamps.push(obj.measure_date);
+            });
+            timeStamps = getLastSevenElements(timeStamps);
+
+            //create Chart
+            var chartElement = $("#tempChart");
+            createChart(chartElement, timeStamps, temperatureValues, "Temperature"); 
+
+        }).fail(function(){
+            alert("could not get brightness values data");
+        });
+    }
+
+    function loadImages(){
+        $.get("/app/GetPhotos", function(data){
+
+            //convert JSON data to arrays
+            var jsonData = $.parseJSON(data);
+            var photoPaths = [];
+            $.each(jsonData, function(idx, obj){
+                photoPaths.push(obj.photo_path);
+            });
+            photoPaths = getLastSevenElements(photoPaths);
+            var timeStamps = [];
+            $.each(jsonData, function(idx, obj){
+                timeStamps.push(obj.measure_date);
+            });
+            timeStamps = getLastSevenElements(timeStamps);
+            //loadImages
+            $('#images .plantphoto').each(function(idx, obj) {
+                if(idx < photoPaths.length){
+                    d = new Date();
+                    $(this).attr('src', photoPaths[idx]);
+                }
+            });
+
+        }).fail(function(){
+            alert("could not get photo path data");
+        });
+    }
+
+    function loadSettings(){
+        $.get("/app/GetSettings", function(data){
+
+            var jsonData = $.parseJSON(data);
+            var humidityThreshold = jsonData[0].humidity_threshhold;
+            var pumpWaterAmount = jsonData[0].pump_water_amount;
+            $("#humidityInput").val(humidityThreshold);
+            $("#waterInput").val(pumpWaterAmount);
+
+        }).fail(function(){
+            alert("could not get settings data");
+        });
+    }
+
+    function activatePump(){
+
+    }
+
+    function createChart(chartElement, dataLabels, dataY, label){
+        new Chart(chartElement, {
+            type: 'line',
+            data: {
+                labels: dataLabels,
+                datasets: [
+                { 
+                    data: dataY,
+                    label: label
+                }
+                ]
+            },
+            });
+    }
+
+    function getLastSevenElements(array){
+        return (array.length >= 7) ? array.slice(array.length-8, array.length-1) : array;
+    }
+
+    function getLastThreeElements(array){
+        return (array.length >= 7) ? array.slice(array.length-4, array.length-1) : array;
+    }
+
+    $("#settingsForm").submit(function(e) {
+
+        e.preventDefault();
+        var form = $(this);
+        var url = form.attr('action');
+    
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: form.serialize(),
+            success: function(data)
+            {
+                alert(data);
             }
-            ]
-        }
-        });*/
-}
+        });
+    
+    });
+    
+    createHumidityChart();
+    createBrightnessChart();
+    createTempChart();
+    loadImages();
+    loadSettings();
 
-function getHumidityValues(){
-
-}
-
-function getBrightnessValues(){
-
-}
-function getTempValues(){
-
-}
-function getImages(){
-
-}
-function activatePump(){
-
-}
-function getHumidityThreshold(){
-
-}
-
-function setHumidityThreshold(){
-
-}
-
-function getPumpWateramount(){
-
-}
-
-function setPumpWateramount(){
-
-}
-
-
+});

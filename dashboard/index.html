@@ -8,6 +8,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        
         <script src="Chart.js"></script>
         <script src="webinterface.js"></script>
         <link rel="stylesheet" href="index.css">
@@ -23,98 +24,64 @@
             <div id="dashboard" class="row">
 
               <div id="dashboard-left" class="col-sm-6">
-                <div id="content-dashboard-left" class="">
-
-                  <div id="statusDiv" class="">
+                <div id="content-dashboard-left">
+                  <div id="statusDiv">
                     <h2>Status</h2>
-                    <div id="status" class="">
-                      <div id="sensorTable">
-                        <table class="table">
-                          <thead>
-                            <tr>
-                              <td scope="col">Date</td>
-                              <td scope="col">Humidity</td>
-                              <td scope="col">Light</td>
-                              <td scope="col">Temperature</td>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>30.12.2019</td>
-                              <td>50%</td>
-                              <td>300</td>
-                              <td>20C</td>
-                            </tr>
-                            <tr>
-                                <td>30.12.2019</td>
-                                <td>50%</td>
-                                <td>300</td>
-                                <td>20C</td>
-                            </tr>
-                            <tr>
-                                <td>30.12.2019</td>
-                                <td>50%</td>
-                                <td>300</td>
-                                <td>20C</td>
-                            </tr>
-                          </tbody>
-                          
-                        </table>
-                      </div>
+                    <div id="status">
                       <canvas id="humidityChart" width="100" height="50"></canvas>
-                      <canvas id="lightChart" width="100" height="50"></canvas>
+                      <canvas id="brightnessChart" width="100" height="50"></canvas>
                       <canvas id="tempChart" width="100" height="50"></canvas>
                     </div>
-
-                    <div id="controlsDiv" class="">
-                      <h2>Controls</h2>
-                      <div id="controls" class="">
-                        <table id="controlsTable" class="table" >
-                          <tbody>
-                            <tr>
-                              <td>Humidity</td>
-                              <td><input id="humidityInput" type="text" name="humidityInput"></td>
-                              <td><button class="btn">Save</button></td>
-                            </tr>
-                            <tr>
-                              <td>Water Amount</td>
-                              <td><input id="waterInput" type="text" name="waterInput"></td>
-                              <td><button class="btn">Activate Pump</button></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-
                   </div>
                 </div>
               </div>
 
               <div id="dashboard-right" class="col-sm-6">
-                  <div id="content-dashboard-right" class="">
+                  <div id="content-dashboard-right">
 
-                    <div id="imagesDiv" class="">
+                    <div id="imagesDiv">
                       <h2>Images</h2>
-                      <div id="images" class="">
+                      <div id="images">
                         <table id="imagesTable" class="table">
                           <tr>
-                            <td class="td-first" colspan="2"><img src="photos/img20191231-023129.jpg"></td>
+                            <td class="td-first" colspan="2"><img class="plantphoto" src="img/flower.jpg"></td>
                           </tr>
                           <tr>
-                              <td class="td-past"><img src="img/flower.jpg"></td>
-                              <td class="td-past"><img src="img/flower.jpg"></td>
+                              <td class="td-past"><img class="plantphoto" src="img/flower.jpg"></td>
+                              <td class="td-past"><img class="plantphoto" src="img/flower.jpg"></td>
                           </tr>
                           <tr>
-                              <td class="td-past"><img src="img/flower.jpg"></td>
-                              <td class="td-past"><img src="img/flower.jpg"></td>
+                              <td class="td-past"><img class="plantphoto" src="img/flower.jpg"></td>
+                              <td class="td-past"><img class="plantphoto" src="img/flower.jpg"></td>
                           </tr>
                           <tr>
-                              <td class="td-past"><img src="img/flower.jpg"></td>
-                              <td class="td-past"><img src="img/flower.jpg"></td>
+                              <td class="td-past"><img class="plantphoto" src="img/flower.jpg"></td>
+                              <td class="td-past"><img class="plantphoto" src="img/flower.jpg"></td>
                           </tr>
                         </table>
                       </div>
                     </div>
-
+                    <div id="controlsDiv">
+                      <h2>Controls</h2>
+                      <div id="controls">
+                        <form id="settingsForm" action="/app/SetSettings" method="POST">
+                          <table id="controlsTable" class="table" >
+                            <tbody>
+                              <tr>
+                                <td>Humidity Treshold</td>
+                                <td><input id="humidityInput" type="text" name="humidityThreshhold"></td>
+                                <td><button type="submit" class="btn btn-primary">Save</button></td>
+                              </tr>
+                              <tr>
+                                <td>Water Amount</td>
+                                <td><input id="waterInput" type="text" name="pumpWaterAmount"></td>
+                                <td><button class="btn btn-primary">Activate Pump</button></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </form>
+                      </div>
+                    </div>
                   </div>
                 </div>
             </div>

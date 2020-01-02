@@ -45,10 +45,11 @@ def GetSettings():
 
 @app.route( "/app/SetSettings", methods=["POST"] )
 def SetSettings():
-    humidity_threshhold = request.args.get('humidity_threshhold', 0)
-    pump_water_amount  = request.args.get('pump_water_amount', 0)
+    humidity_threshhold = request.form.get('humidityThreshhold', default=0, type=int)
+    pump_water_amount  = request.form.get('pumpWaterAmount', default=0, type=int)
     logging.info("app.py: API-call SetSettings(humidity_threshhold=%s,pump_water_amount=%s)" % (humidity_threshhold,pump_water_amount))
     api_controller.SetSettings(humidity_threshhold, pump_water_amount)
+    return "Succesfully Saved Settings!"
 
 @app.route( "/app/ActivatePump", methods=["POST"] )
 def ActivatePump():
