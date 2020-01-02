@@ -121,6 +121,15 @@ $( document ).ready(function() {
 
     function activatePump(){
 
+        $.ajax({
+            type: "POST",
+            url: "/app/ActivatePump",
+            success: function(data)
+            {
+                alert(data);
+            }
+        });
+
     }
 
     function createChart(chartElement, dataLabels, dataY, label){
@@ -164,6 +173,11 @@ $( document ).ready(function() {
     
     });
     
+    $("#activatePumpBtn").click(function(e){
+        e.preventDefault();
+        activatePump();
+    });
+
     createHumidityChart();
     createBrightnessChart();
     createTempChart();

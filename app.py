@@ -55,7 +55,7 @@ def SetSettings():
 def ActivatePump():
     logging.info("app.py: API-call ActivatePump")
     handler.ExecutePump()
-    return "OK"
+    return "Pump was succesfully executed!"
 
 if (__name__ == "__main__"):
     app.run(host='0.0.0.0')
