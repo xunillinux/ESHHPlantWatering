@@ -27,34 +27,34 @@ class Handler:
             self.ExecutePump()
     
     def ExecuteHumiditySensor(self):
+        logging.info("Handler.py: Executing HumiditySensor")
         humidityValue = self.humiditySensor.Measure()
         self.controller.AddHumidityValue(humidityValue)
-        logging.info("Handler.py: Executing HumiditySensor")
         return humidityValue
     
     def ExecuteBrightnessSensor(self):
+        logging.info("Handler.py: Executing BrightnessSensor")
         brightnessValue = self.brightnessSensor.Measure()
         self.controller.AddBrightnessValue(brightnessValue)
-        logging.info("Handler.py: Executing BrightnessSensor")
         return brightnessValue
     
     def ExectueTemperatureSensor(self):
+        logging.info("Handler.py: Executing TemperatureSensor")
         temperatureValue = self.temperatureSensor.Measure()
         self.controller.AddTemperatureValue(temperatureValue)
-        logging.info("Handler.py: Executing TemperatureSensor")
         return temperatureValue
     
     def ExecuteCamera(self):
+        logging.info("Handler.py: Executing Camera")
         photoPath = self.camera.TakePhoto()
         self.controller.SetPhoto(photoPath)
-        logging.info("Handler.py: Executing Camera")
 
     
     def ExecutePump(self):
+        logging.info("Handler.py: Executing Pump")
         settings = json.loads(self.controller.GetSettings())
         waterAmountCl = settings[0]["pump_water_amount"]
         self.pump.ExecutePump(waterAmountCl)
-        logging.info("Handler.py: Executing Pump")
 
     
     def HumidityBelowThreshhold(self, humidity):

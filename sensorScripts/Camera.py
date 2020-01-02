@@ -2,6 +2,7 @@
 import os
 import subprocess
 import time
+import logging
 
 class Camera:
 
@@ -12,7 +13,11 @@ class Camera:
         self.ensure_dir(self.photoPathDirectory)
         photoName = "photos/img" + time.strftime("%Y%m%d-%H%M%S") + ".jpg"
         photoPath = self.photoPathDirectory + "/" + photoName
-        subprocess.call(["sudo raspistill -o "+ photoPath], shell=True)
+        command = "/usr/bin/sudo /usr/bin/raspistill -o " + photoPath
+        logging.info("Camera.py: Taking photo: "+photoPath)
+
+        return_code = subprocess.check_call(command, shell=True)
+        
         return photoName
     
     def ensure_dir(self, file_path):
