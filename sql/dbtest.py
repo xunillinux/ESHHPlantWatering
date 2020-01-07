@@ -13,7 +13,7 @@ mariadb_connection.commit()
 cursor.execute("SELECT id, humidity_threshhold, pump_water_amount FROM settings WHERE id=1")
 
 for id, humidity_threshhold, pump_water_amount in cursor:
-    print("Id: {}, humidity threshhold: {}, water amount: {}").format(id, humidity_threshhold, pump_water_amount) 
+    print("Id: {}, humidity threshhold: {}, water amount: {}".format(id, humidity_threshhold, pump_water_amount))
 
 
 cursor.execute("DELETE FROM settings WHERE id=1")
