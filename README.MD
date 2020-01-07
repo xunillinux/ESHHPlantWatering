@@ -140,3 +140,7 @@ if correctly setup it should print Id: 1, Water Amount: 42
 41. sudo systemctl start scheduler
 
 42. sudo systemctl enable scheduler
+
+### Unit Test Execution
+
+43. python3 /home/pi/flask/tests.py 
