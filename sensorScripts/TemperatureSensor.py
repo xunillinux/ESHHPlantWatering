@@ -1,4 +1,5 @@
 import Adafruit_DHT
+import logging
 
 class TemperatureSensor:
 
@@ -9,4 +10,5 @@ class TemperatureSensor:
 	def Measure(self):
 		# Tries 15 times to get a sensor reading (waiting 2 seconds between each retry)
 		humidity, temperature = Adafruit_DHT.read_retry(self.sensor, self.PIN)
+		logging.info(temperature)
 		return temperature if temperature is not None else 0

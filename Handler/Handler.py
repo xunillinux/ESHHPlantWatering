@@ -29,6 +29,7 @@ class Handler:
     def ExecuteHumiditySensor(self):
         logging.info("Handler.py: Executing HumiditySensor")
         humidityValue = self.humiditySensor.Measure()
+        logging.info(humidityValue)
         self.controller.AddHumidityValue(humidityValue)
         return humidityValue
     

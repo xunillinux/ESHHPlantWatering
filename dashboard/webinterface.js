@@ -10,7 +10,9 @@ $( document ).ready(function() {
             $.each(jsonData, function(idx, obj){
                 humidityValues.push(obj.humidity_value);
             });
+
             humidityValues = getLastSevenElements(humidityValues);
+
             var timeStamps = [];
             $.each(jsonData, function(idx, obj){
                 timeStamps.push(obj.measure_date);
@@ -148,11 +150,7 @@ $( document ).ready(function() {
     }
 
     function getLastSevenElements(array){
-        return (array.length >= 7) ? array.slice(array.length-8, array.length-1) : array;
-    }
-
-    function getLastThreeElements(array){
-        return (array.length >= 7) ? array.slice(array.length-4, array.length-1) : array;
+        return (array.length >= 7) ? array.slice(array.length-7, array.length) : array;
     }
 
     $("#settingsForm").submit(function(e) {

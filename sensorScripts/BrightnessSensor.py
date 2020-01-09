@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time
+import logging
 
 class BrightnessSensor:
 
@@ -10,6 +11,7 @@ class BrightnessSensor:
 		#TODO measure few times over a second and take average
 		#TODO convert into some brightness value
 		value = self.Rc_time(self.pin_to_circuit)
+		logging.info(value)
 		GPIO.cleanup()
 		return value
 
