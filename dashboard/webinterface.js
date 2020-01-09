@@ -21,7 +21,7 @@ $( document ).ready(function() {
 
             //create Chart
             var chartElement = $("#humidityChart");
-            createChart(chartElement, timeStamps, humidityValues, "Humidity"); 
+            createChart(chartElement, timeStamps, humidityValues, "Humidity in %"); 
 
         }).fail(function(){
             alert("could not get humidity values data");
@@ -47,7 +47,7 @@ $( document ).ready(function() {
 
             //create Chart
             var chartElement = $("#brightnessChart");
-            createChart(chartElement, timeStamps, brightnessValues, "Brightness"); 
+            createChart(chartElement, timeStamps, brightnessValues, "Brightness from 0 (rather dark) to 100 (sunny daylight)"); 
 
         }).fail(function(){
             alert("could not get brightness values data");
@@ -142,10 +142,25 @@ $( document ).ready(function() {
                 datasets: [
                 { 
                     data: dataY,
-                    label: label
+                    label: label,
+                    borderColor: "#55bae7",
+                    borderDash: [5, 5],
+                    pointBackgroundColor: "#55bae7",
+                    pointBorderColor: "#55bae7",
+                    pointHoverBackgroundColor: "#55bae7",
+                    pointHoverBorderColor: "#55bae7"
                 }
                 ]
             },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
             });
     }
 

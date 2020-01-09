@@ -6,4 +6,4 @@ logging.basicConfig(filename='test.log',level=logging.DEBUG)
 
 handler = Handler()
 
-handler.ExecuteBrightnessSensor()
+handler.ExectueTemperatureSensor()
